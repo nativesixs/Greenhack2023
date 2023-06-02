@@ -31,12 +31,13 @@
                         <!-- Added start date and end date so the user can reserve multiple days -->
                         <h2 class = "middle_header">Choose date</h2>
                         <span>Start date:</span>
-                        <input type="date", id="start_date", placeholder="dd-mm-yyyy">
+                        <input type="date" id="start_date" placeholder="dd-mm-yyyy">
                         <span>End date:</span>
-                        <input type="date", id="end_date", placeholder="dd-mm-yyyy">
-                        <h2><h2>
+                        <input type="date" id="end_date" placeholder="dd-mm-yyyy">
+                        <h2></h2>
                         <input type="submit" value="Show free places">
                     </form>
+                </div>
             </section>
             <section class="seating_selection">
                 <h2>Seating Layout</h2>
@@ -62,13 +63,11 @@
 
                         <form action="#" th:action="@{/firstfloor/5}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
                             <button type="submit" th:name="action" th:value="in5">seat5</button>
+                        </form>
                     </div>
                 </div>
-                
             </section>
-        <div class = "reservation_plan">
-            
-            </form>
+        </div>
 
 <!--            <div class="selection_button" ,="" style="top: 6.7%;left: 18.3%;">-->
 <!--            </div>-->
@@ -106,8 +105,7 @@
 <!--            </div>-->
 <!--            <div class="selection_button" ,="" style="top: 9%;left: 25.9%;">-->
 <!--            </div>-->
-        </div>
-    </div>
+    </main>
 </body>
 </html>
 
