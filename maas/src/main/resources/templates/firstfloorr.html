@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Terminate Edges</title>
+    <title>IPSet Switcher</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <style type=text/css>
@@ -44,16 +44,16 @@ text-decoration: none;
     <nav>
         <ul>
             <li>
-                <a href="home"> Home </a>
+                <a th:href="@{/home}"> Home </a>
             </li>
             <li>
-                <a href="terminateEdge"> Terminate Edges </a>
+                <a th:href="@{/terminateEdge}"> Terminate Edges </a>
             </li>
             <li>
-                <a href="ipsetswitch"> IPSet Switcher </a>
+                <a th:href="@{/ipsetswitch}"> IPSet Switcher </a>
             </li>
             <li>
-                <a href="dpubind"> DPU Binder </a>
+                <a th:href="@{/dpubind}"> DPU Binder </a>
             </li>
         </ul>
 
@@ -109,31 +109,55 @@ text-decoration: none;
     }
 </style>
 
+
 <!--both columns-->
 <div style="display:block; width:100%;">
-<!--first column-->
+
+    <!--first column-->
     <div style="width:50%; float: left; display: inline-block;">
-        <form action="#" th:action="@{/terminateEdge}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">
-            <label>plato ckod:</label><input name="ckod" id="ckod" type="text" th:field="*{ckodField}">
+<!--        <form action="#" th:action="@{/ipsetswitch}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">-->
+<!--            <label>sim ckod:</label><input name="simckod" id="simckod" type="text" th:field="*{simckodField}">-->
+<!--&lt;!&ndash;            <label>dpu ckod:</label><input name="dpuckod" id="dpuckod" type="text" th:field="*{dpuckodField}">&ndash;&gt;-->
 
-            <label for="mode">Mode:</label>
-            <select id="mode" name="mode">
-                <option value="0">terminate all</option>
-                <option value="1">terminate devices</option>
-                <option value="2">terminate places</option>
-                <option value="3">list all edges</option>
-            </select><br><br>
+<!--            <label for="submitbt"></label>-->
+<!--            &lt;!&ndash;            <button style="width:175px" id="submitbt" onclick="submit" value="Submit">Submit</button>&ndash;&gt;-->
+<!--            <input class="submit" type="submit" style="width:175px" id="submitbt" value="Submit">-->
+<!--        </form>-->
 
-    
-            
-
-            <label for="submitbt"></label>
-<!--            <button style="width:175px" id="submitbt" onclick="submit" value="Submit">Submit</button>-->
-                <input class="submit" type="submit" style="width:175px" id="submitbt" value="Submit">
+        <form action="#" th:action="@{/firstfloor/1}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">
+            <button type="submit" th:name="action" th:value="in">check-in</button>
         </form>
+        <form action="#" th:action="@{/firstfloor/2}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">
+            <button type="submit" th:name="action" th:value="in2">check-in</button>
+        </form>
+        <form action="#" th:action="@{/firstfloor/3}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">
+            <button type="submit" th:name="action" th:value="in3">check-in</button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+        <form action="#" th:action="@{/firstfloor/2}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">
+            <input type="hidden" name="id" th:value="${id}" />
+            <input class="submit" type="submit"  style="width:175px" id="sub2" name="sub2"  value="Submit2">
+        </form>
+        <form action="#" th:action="@{/firstfloor/3}" th:object="${data}" method="post" style="text-align:left" autocomplete="on">
+            <input type="hidden" name="id" th:value="${id}" />
+            <input class="submit" type="submit" style="width:175px" id="sub3" name="sub3"  value="Submit3">
+        </form>
+
+
     </div>
 
-<!--second column-->
+    <!--second column-->
     <div style="width:50%; float: left; display: inline-block;">
 
         <form th:action="@{/log/log}" method="get">
