@@ -24,12 +24,10 @@ public class PagesController {
 
     @RequestMapping("/firstfloor/*")
     public String index(@RequestParam(value = "action", required = false) String action, Model model,Inputs form) {
-        model.addAttribute("data", form);
+//        model.addAttribute("data", form);
         model.addAttribute("action", action);
-        System.out.println(action);
-
-//        model.addAttribute("userIds", userIds);
-        return "firstfloor";
+        System.out.println("button "+action);
+        return "redirect:/firstfloor";
     }
 
 

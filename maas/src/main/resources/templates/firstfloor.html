@@ -98,52 +98,64 @@
 <!--            </form>-->
 <!--        </div>-->
         <div class = "reservation_plan">
-            <img src="floor1.JPG" alt="floor plan", class="floor_plan">
+            <img th:src="@{floor1.JPG}" alt="floor plan", class="floor_plan">
 
             <form action="#" th:action="@{/firstfloor/1}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
-                <button type="submit" th:name="action" th:value="in">check-in</button>
+                <button type="submit" th:name="action" th:value="in">seat1</button>
             </form>
 
             <form action="#" th:action="@{/firstfloor/2}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
-                <button type="submit" th:name="action" th:value="in2">check-in</button>
+                <button type="submit" th:name="action" th:value="in2">seat2</button>
             </form>
 
-            <div class="selection_button" ,="" style="top: 6.7%;left: 18.3%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 6.7%;left: 19.82%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 6.7%;left: 20.78%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 6.7%;left: 22.2%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 6.7%;left: 23.1%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 6.7%;left: 24.56%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 6.7%;left: 25.9%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 18.3%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 19.82%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 20.78%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 22.2%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 23.1%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 24.56%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 11.6%;left: 25.9%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 7.2%;left: 27.679%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 9.6%;left: 27.679%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 10.7%;left: 27.9%;">
-            </div>
-            <div class="selection_button" ,="" style="top: 9%;left: 25.9%;">
-            </div>
+            <form action="#" th:action="@{/firstfloor/3}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="in3">seat3</button>
+            </form>
+
+            <form action="#" th:action="@{/firstfloor/4}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="in4">seat4</button>
+            </form>
+
+            <form action="#" th:action="@{/firstfloor/5}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="in5">seat5</button>
+            </form>
+
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 18.3%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 19.82%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 20.78%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 22.2%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 23.1%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 24.56%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 6.7%;left: 25.9%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 18.3%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 19.82%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 20.78%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 22.2%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 23.1%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 24.56%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 11.6%;left: 25.9%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 7.2%;left: 27.679%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 9.6%;left: 27.679%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 10.7%;left: 27.9%;">-->
+<!--            </div>-->
+<!--            <div class="selection_button" ,="" style="top: 9%;left: 25.9%;">-->
+<!--            </div>-->
         </div>
     </div>
 </body>
