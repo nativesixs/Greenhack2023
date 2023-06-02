@@ -20,11 +20,12 @@ body {
 h1, h2
 {
     text-align: left;
-}
+} 
 
 .container {
     display: flex;
     margin: 2%;
+    height: 80vh;
   }
 
 
@@ -53,6 +54,7 @@ section {
 
 .reservation-form {
     width: 33%;
+    
   }
   
 .seating_selection {
