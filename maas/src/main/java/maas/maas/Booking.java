@@ -48,7 +48,7 @@ public class Booking {
         String sqlSelectAllPersons = "SELECT * FROM seating";
         String connectionUrl = "jdbc:mysql://localhost:3306/firstfloor";
 
-        try (Connection conn = DriverManager.getConnection(connectionUrl, "root", "");
+        try (Connection conn = DriverManager.getConnection(connectionUrl, "root", "toor");
              PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons);
              ResultSet rs = ps.executeQuery()) {
 
