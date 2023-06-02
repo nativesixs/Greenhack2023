@@ -25,7 +25,8 @@ h1, h2
 .container {
     display: flex;
     margin: 2%;
-    height: 81vh;
+    height: 130vh;
+    
   }
 
 
@@ -33,10 +34,24 @@ h1, h2
 header {
     background-color: #fff;
     padding: 20px;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+header img{
+    vertical-align: middle;
+    float: right;
+    margin-right: 1%;
+    width: 40%;
+    
+}
+
 header h1 {
+    vertical-align: middle;
+    float: left;
     font-size: 24px;
     color: #333;
 }
@@ -53,12 +68,11 @@ section {
 }
 
 .reservation-form {
-    width: 33%;
-    
+    width: 10%;
   }
   
 .seating_selection {
-    width: 66%;
+    width: 86%;
     margin-left: 2%;
   }
 
@@ -120,29 +134,62 @@ section h2 {
 .floor_plan_div
 {
     position: relative;
-    margin-top: 3%;
+    margin-top: 1%;
 
 }
 .floor_plan_div img
 {
-    object-fit:contain;
-}
-.reservation_plan .selection_button
-{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    max-width: 10%;
-    max-height: 10%;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: aqua;
+    display: block;
+    object-fit: fill;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    
+    
 }
 
 .seating_selection h2{
     text-align: center;
 }
 
+floor_plan_div{
+    position: relative;
+}
+
+.floor_plan_div button{
+    position: absolute;
+    overflow: hidden;
+    transform: rotate(90deg);
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    width: 1%;
+    height: 1%;
+}
+
+.seat_free
+{
+    border-color: rgba(9, 232, 113, 0.403);
+    background-color: rgba(9, 232, 113, 0.403);
+    color: rgba(9, 232, 113, 0.403);
+
+}
+
+.seat_occupied
+{
+    border-color: rgba(238, 5, 114, 0.403);
+    background-color: rgba(238, 5, 114, 0.403);
+    color: rgba(238, 5, 114, 0.403);
+
+}
+
+.seat_selected
+{
+    border-color: rgba(5, 199, 238, 0.403);
+    background-color: rgba(5, 199, 238, 0.403);
+    color: rgba(5, 199, 238, 0.403);
+
+}
 
 /* .seating_selection .seat {
 display: inline-block;

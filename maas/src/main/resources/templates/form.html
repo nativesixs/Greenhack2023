@@ -10,8 +10,9 @@
   </head>
   <body>
     <header>
-      <!-- Header content, such as logo and navigation -->
-    <h1>Our amazing seat reservation site</h1>
+        <!-- Header content, such as logo and navigation -->
+        <h1>Our amazing seat reservation site</h1>
+        <img src="Edwards-LifeSciences-logo-transparent.png" alt="Edwards Life Sciences Logo">
 
     </header>
   
@@ -44,7 +45,26 @@
                 <h2>Seating Layout</h2>
                 <!-- Seating layout and seat availability display -->
                 <div class="floor_plan_div">
-                    <!-- <img src="maas/floor1_cropped.jpg"> -->
+                    <img src="maas/floor1_cropped.jpg">
+                    <form action="#" th:action="@{/firstfloor/1}" th:object="${data}" method="post" >
+                        <button type="submit" th:name="action" th:value="in1" style="top: 4.2%; left: 12.7%;" class="seat_free"></button>
+                    </form>
+
+                    <form action="#" th:action="@{/firstfloor/2}" th:object="${data}" method="post" >
+                        <button type="submit" th:name="action" th:value="in2" style="top: 11%; left: 12.7%;" class="seat_occupied"></button>
+                    </form>
+
+                    <form action="#" th:action="@{/firstfloor/3}" th:object="${data}" method="post" >
+                        <button type="submit" th:name="action" th:value="in3" style="top: 4.2%;left: 16%;" class="seat_free"></button>
+                    </form>
+
+                    <form action="#" th:action="@{/firstfloor/4}" th:object="${data}" method="post" >
+                        <button type="submit" th:name="action" th:value="in4" style="top: 11%;left: 16%;" class="seat_selected"></button>
+                    </form>
+
+                    <form action="#" th:action="@{/firstfloor/5}" th:object="${data}" method="post" >
+                        <button type="submit" th:name="action" th:value="in5" style="top: 46.7%;left: 49.82%;"></button>
+                    </form>
                 </div>
                 
             </section>
