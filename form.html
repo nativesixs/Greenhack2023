@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+
+    <title>Testovací stránka</title>
+    <style>
+        /* Reset default margin and padding */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .reservation_plan
+        {
+            position: relative;
+        }
+
+        .floor_plan
+        {
+            position: relative;
+            margin: 5%, 5%, 5%, 5%;
+            width: 60%;
+            height: 20%;
+
+        }
+
+        .reservation_plan .selection_button
+       {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        max-width: 10%;
+        max-height: 10%;
+        min-width: 10px;
+        min-height: 10px;
+        background-color: aqua;
+       }
+        /* Set font and background color for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation panel styles */
+        .nav {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+        }
+
+        .nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Content area styles */
+        .content {
+            padding: 20px;
+        }
+
+        /* Page heading styles */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Toto je testovací název</h1>
+        <h2>Vyberte datum</h2>
+        <div class = form>
+            <form action="", method="post">
+                <select name="Location" id="location_select">
+                    <option value="prague" selected="selected">Prague</option>
+                    <!-- <option value="berlin">Berlin</option>
+                    <option value="wien">Wien</option> -->
+                </select>
+                <br>
+                <!-- Action je místo, které přesměruje na Java backed, Java si datum vezme pomocí metody post -->
+                <input type="date", id="date", placeholder="dd-mm-yyyy">
+                <br>
+                <input type="submit" value="Show free places">
+            </form>
+        </div>
+        <!-- <div class = "reservation_plan">
+            <img src="example_plan.png" alt="floor plan", class="floor_plan">
+            <div class = "selection_button"></div>
+            <div class = "selection_button", style="top: 45%; left: 55%"></div>
+        </div> -->
+    </div>
+</body>
+</html>
