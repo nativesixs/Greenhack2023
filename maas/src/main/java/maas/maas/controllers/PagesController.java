@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 
 @Controller
@@ -26,17 +27,16 @@ public class PagesController {
 
     @RequestMapping(value="/firstfloor/book", method = RequestMethod.POST)
     public String index(@RequestParam(value = "action", required = false) String action, Model model,Inputs form) {
-//        model.addAttribute("data", form);
         model.addAttribute("action", action);
-//        maas.maas.Booking.main(action);
         selectedSeat=action;
 
         return "redirect:/firstfloor/book";
     }
 
     @GetMapping("/firstfloor/book")
-    public String firstfloorbook(Model model) {
+    public String firstfloorbook(Model model) throws SQLException {
         model.addAttribute("data", new maas.maas.controllers.Inputs());
+        maas.maas.Booking.main(selectedSeat);
         return "firstfloor";
     }
 

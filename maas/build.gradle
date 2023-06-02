@@ -22,10 +22,16 @@ dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 //	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 
+//	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.33'
+
+//	implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.33'
 }
 
 tasks.named('test') {
