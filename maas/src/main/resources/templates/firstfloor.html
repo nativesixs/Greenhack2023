@@ -81,6 +81,73 @@
         }
     </style>
 </head>
+<<<<<<< HEAD
+
+<head>
+    <title>Reservation System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <!-- Header content, such as logo and navigation -->
+    <h1>Our amazing seat reservation site</h1>
+
+    </header>
+  
+    <main>
+        <div class="container">
+            <section class="reservation-form">
+                <!-- Reservation form content, such as date picker, seat selection, etc. -->
+                <h2>Choose location</h2>
+                <div class = form>
+                    <form action="", method="post">
+                        <!-- Action je místo, které přesměruje na Java backed, Java si datum vezme pomocí metody post -->
+                        <select name="Location" id="location_select">
+                            <option value="prague" selected="selected">Prague</option>
+                            <!-- <option value="berlin">Berlin</option>
+                            <option value="wien">Wien</option> -->
+                        </select>
+                        <!-- Added start date and end date so the user can reserve multiple days -->
+                        <h2 class = "middle_header">Choose date</h2>
+                        <span>Start date:</span>
+                        <input type="date" id="start_date" placeholder="dd-mm-yyyy">
+                        <span>End date:</span>
+                        <input type="date" id="end_date" placeholder="dd-mm-yyyy">
+                        <h2></h2>
+                        <input type="submit" value="Show free places">
+                    </form>
+                </div>
+            </section>
+            <section class="seating_selection">
+                <h2>Seating Layout</h2>
+                <!-- Seating layout and seat availability display -->
+                <div class="floor_plan_div">
+                    <img th:src="@{floor1.JPG}" alt="floor plan", class="floor_plan">
+                    <div class = "seat_selecton">
+                        <form action="#" th:action="@{/firstfloor/1}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
+                            <button type="submit" th:name="action" th:value="in">seat1</button>
+                        </form>
+
+                        <form action="#" th:action="@{/firstfloor/2}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                            <button type="submit" th:name="action" th:value="in2">seat2</button>
+                        </form>
+
+                        <form action="#" th:action="@{/firstfloor/3}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                            <button type="submit" th:name="action" th:value="in3">seat3</button>
+                        </form>
+
+                        <form action="#" th:action="@{/firstfloor/4}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                            <button type="submit" th:name="action" th:value="in4">seat4</button>
+                        </form>
+
+                        <form action="#" th:action="@{/firstfloor/5}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                            <button type="submit" th:name="action" th:value="in5">seat5</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+=======
 <body>
     <div class="nav">
         <ul>
@@ -98,12 +165,13 @@
 <!--            </form>-->
 <!--        </div>-->
         <div class = "reservation_plan">
-            <img th:src="@{/floor1.JPG}" alt="floor plan", class="floor_plan">
+            <img th:src="@{/floor1_cropped.JPG}" alt="floor plan", class="floor_plan">
 
 
             <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
                 <button type="submit" th:name="action" th:value="1">seat1</button>
             </form>
+>>>>>>> fe734bea5e1d5a74268bc477917a02b584913db6
 
             <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
                 <button type="submit" th:name="action" th:value="2">seat2</button>
@@ -163,8 +231,7 @@
 <!--            </div>-->
 <!--            <div class="selection_button" ,="" style="top: 9%;left: 25.9%;">-->
 <!--            </div>-->
-        </div>
-    </div>
+    </main>
 </body>
 </html>
 
