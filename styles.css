@@ -17,6 +17,11 @@ body {
     color: #333;
 }
 
+h1, h2
+{
+    text-align: left;
+}
+
 .container {
     display: flex;
     margin: 2%;
