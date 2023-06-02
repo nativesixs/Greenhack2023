@@ -1,0 +1,227 @@
+/*WAS DONE: Added css styles, so the mage looks nicer*/
+
+/*Import fonts so it looks nice*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;800&display=swap');
+
+/* Reset some default styles */
+body, h1, h2, p, ul, li, img {
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Overall page styles */
+body {
+    font-family: 'Lato', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6f9fc;
+    color: #333;
+}
+
+h1, h2
+{
+    text-align: left;
+} 
+
+.container {
+    display: flex;
+    margin: 2%;
+    height: 130vh;
+    
+  }
+
+
+/* Header styles */
+header {
+    background-color: #fff;
+    padding: 20px;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header img{
+    vertical-align: middle;
+    float: right;
+    margin-right: 1%;
+    width: 40%;
+    
+}
+
+header h1 {
+    vertical-align: middle;
+    float: left;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Main section styles */
+main {
+    margin-top: 20px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form {
+    width: 10%;
+  }
+  
+.seating_selection {
+    width: 86%;
+    margin-left: 2%;
+  }
+
+section h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 1%;
+}
+.middle_header
+{
+    margin-top: 1%;
+}
+
+/* Reservation form styles */
+
+.reservation-form input[type="text"],
+.reservation-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f6f9fc;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.reservation-form span{
+    margin-right: 0.66%;
+
+}
+#start_date
+{
+    margin-right: 3%;
+}
+
+.reservation-form input[type="text"]::placeholder,
+.reservation-form select option {
+    color: #999;
+}
+.reservation-form 
+.reservation-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Seating selection styles */
+
+.floor_plan_div
+{
+    position: relative;
+    margin-top: 1%;
+
+}
+.floor_plan_div img
+{
+    display: block;
+    object-fit: fill;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    
+    
+}
+
+.seating_selection h2{
+    text-align: center;
+}
+
+floor_plan_div{
+    position: relative;
+}
+
+.floor_plan_div button{
+    position: absolute;
+    overflow: hidden;
+    transform: rotate(90deg);
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    width: 1%;
+    height: 1%;
+}
+
+.seat_free
+{
+    border-color: rgba(9, 232, 113, 0.403);
+    background-color: rgba(9, 232, 113, 0.403);
+    color: rgba(9, 232, 113, 0.403);
+
+}
+
+.seat_occupied
+{
+    border-color: rgba(238, 5, 114, 0.403);
+    background-color: rgba(238, 5, 114, 0.403);
+    color: rgba(238, 5, 114, 0.403);
+
+}
+
+.seat_selected
+{
+    border-color: rgba(5, 199, 238, 0.403);
+    background-color: rgba(5, 199, 238, 0.403);
+    color: rgba(5, 199, 238, 0.403);
+
+}
+
+/* .seating_selection .seat {
+display: inline-block;
+margin: 5px;
+width: 30px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+border-radius: 50%;
+background-color: #e2e2e2;
+color: #333;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.seating_selection .seat.selected {
+background-color: #007bff;
+color: #fff;
+}
+
+.seating_selection .seat:hover {
+background-color: #d4d4d4;
+} */
+
+/* Footer styles */
+footer {
+/* background-color: #333; */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
