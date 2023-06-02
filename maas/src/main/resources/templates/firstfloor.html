@@ -1,8 +1,87 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Seat Reservation</title>
+
+    <title>Testovací stránka</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        /* Reset default margin and padding */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .reservation_plan
+        {
+            position: relative;
+        }
+
+        .floor_plan
+        {
+            position: relative;
+            margin: 5%, 5%, 5%, 5%;
+            width: 60%;
+            height: 20%;
+
+        }
+
+        .reservation_plan .selection_button
+       {
+        position: absolute;
+        top: 6.7%;
+        left: 18.3%;
+        max-width: 10%;
+        max-height: 10%;
+        min-width: 2px;
+        min-height: 3.5px;
+        background-color: rgb(56 155 107);
+       }
+        /* Set font and background color for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        /* Navigation panel styles */
+        .nav {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+        }
+
+        .nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Content area styles */
+        .content {
+            padding: 20px;
+        }
+
+        /* Page heading styles */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
+<<<<<<< HEAD
 
 <head>
     <title>Reservation System</title>
@@ -68,6 +147,53 @@
                 </div>
             </section>
         </div>
+=======
+<body>
+    <div class="nav">
+        <ul>
+            
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to the Edwards Reservation System!</h1>
+        <h2>Choose the date</h2>
+<!--        <div class = form>-->
+<!--            <form action="example.html", method="post">-->
+<!--                <input type="date", id="date", placeholder="dd-mm-yyyy">-->
+<!--                <input type="submit">-->
+<!--            </form>-->
+<!--        </div>-->
+        <div class = "reservation_plan">
+            <img th:src="@{/floor1_cropped.JPG}" alt="floor plan", class="floor_plan">
+
+
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
+                <button type="submit" th:name="action" th:value="1">seat1</button>
+            </form>
+>>>>>>> fe734bea5e1d5a74268bc477917a02b584913db6
+
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="2">seat2</button>
+            </form>
+
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="3">seat3</button>
+            </form>
+
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="4">seat4</button>
+            </form>
+
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="5">seat5</button>
+            </form>
+
+
+            <form action="#" th:action="@{/submitbooking}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
+                <button type="submit" th:name="action" th:value="1">reserve</button>
+            </form>
+
 
 <!--            <div class="selection_button" ,="" style="top: 6.7%;left: 18.3%;">-->
 <!--            </div>-->
