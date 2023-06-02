@@ -18,10 +18,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+    display: flex;
+    margin: 2%;
+  }
+
 
 /* Header styles */
 header {
@@ -43,9 +43,17 @@ main {
 section {
     background-color: #fff;
     padding: 20px;
-    margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.reservation-form {
+    width: calc(33.33% - 2%);
+  }
+  
+.seating_selection {
+    width: calc(66.66% - 2%);
+    margin-left: 2%;
+  }
 
 section h2 {
     font-size: 20px;
@@ -56,7 +64,9 @@ section h2 {
 {
     margin-top: 1%;
 }
+
 /* Reservation form styles */
+
 .reservation-form input[type="text"],
 .reservation-form select {
     width: 100%;
@@ -98,29 +108,18 @@ section h2 {
     background-color: #0056b3;
 }
 
-/* Seating layout styles */
-.seating-layout {
-    position: relative;
-}
+/* Seating selection styles */
 
 .floor_plan_div
 {
     position: relative;
-    margin-top: 5%;
-    margin-left: 25%;
-    width: 60%;
-    max-height: 300px;
+    margin-top: 3%;
 
 }
-
-#floor_plan
+.floor_plan_div img
 {
-    max-height: 100%; 
-    max-width: 100%;
-    object-fit: contain;    
+    object-fit:contain;
 }
-
-
 .reservation_plan .selection_button
 {
     position: absolute;
@@ -133,12 +132,12 @@ section h2 {
     background-color: aqua;
 }
 
-.seating-layout h2{
+.seating_selection h2{
     text-align: center;
 }
 
 
-/* .seating-layout .seat {
+/* .seating_selection .seat {
 display: inline-block;
 margin: 5px;
 width: 30px;
@@ -152,12 +151,12 @@ cursor: pointer;
 transition: background-color 0.3s ease;
 }
 
-.seating-layout .seat.selected {
+.seating_selection .seat.selected {
 background-color: #007bff;
 color: #fff;
 }
 
-.seating-layout .seat:hover {
+.seating_selection .seat:hover {
 background-color: #d4d4d4;
 } */
 

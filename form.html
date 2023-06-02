@@ -16,36 +16,38 @@
     </header>
   
     <main>
-      <section class="reservation-form">
-        <!-- Reservation form content, such as date picker, seat selection, etc. -->
-        <h2>Choose location</h2>
-        <div class = form>
-            <form action="", method="post">
-                <!-- Action je místo, které přesměruje na Java backed, Java si datum vezme pomocí metody post -->
-                <select name="Location" id="location_select">
-                    <option value="prague" selected="selected">Prague</option>
-                    <!-- <option value="berlin">Berlin</option>
-                    <option value="wien">Wien</option> -->
-                </select>
-                <!-- Added start date and end date so the user can reserve multiple days -->
-                <h2 class = "middle_header">Choose date</h2>
-                <span>Start date:</span>
-                <input type="date", id="start_date", placeholder="dd-mm-yyyy">
-                <span>End date:</span>
-                <input type="date", id="end_date", placeholder="dd-mm-yyyy">
-                <h2><h2>
-                <input type="submit" value="Show free places">
-            </form>
-      </section>
-      
-      <section class="seating-layout">
-        <h2>Seating Layout</h2>
-        <!-- Seating layout and seat availability display -->
-        <div class="floor_plan_div">
-            <img src="maas/floor1_cropped.jpg", id = "floor_plan">
+        <div class="container">
+            <section class="reservation-form">
+                <!-- Reservation form content, such as date picker, seat selection, etc. -->
+                <h2>Choose location</h2>
+                <div class = form>
+                    <form action="", method="post">
+                        <!-- Action je místo, které přesměruje na Java backed, Java si datum vezme pomocí metody post -->
+                        <select name="Location" id="location_select">
+                            <option value="prague" selected="selected">Prague</option>
+                            <!-- <option value="berlin">Berlin</option>
+                            <option value="wien">Wien</option> -->
+                        </select>
+                        <!-- Added start date and end date so the user can reserve multiple days -->
+                        <h2 class = "middle_header">Choose date</h2>
+                        <span>Start date:</span>
+                        <input type="date", id="start_date", placeholder="dd-mm-yyyy">
+                        <span>End date:</span>
+                        <input type="date", id="end_date", placeholder="dd-mm-yyyy">
+                        <h2><h2>
+                        <input type="submit" value="Show free places">
+                    </form>
+            </section>
+            
+            <section class="seating_selection">
+                <h2>Seating Layout</h2>
+                <!-- Seating layout and seat availability display -->
+                <div class="floor_plan_div">
+                    <!-- <img src="maas/floor1_cropped.jpg"> -->
+                </div>
+                
+            </section>
         </div>
-        
-      </section>
     </main>
   
     <footer>
