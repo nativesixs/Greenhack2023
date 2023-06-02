@@ -47,11 +47,11 @@ section {
 }
 
 .reservation-form {
-    width: calc(33.33% - 2%);
+    width: 33%;
   }
   
 .seating_selection {
-    width: calc(66.66% - 2%);
+    width: 66%;
     margin-left: 2%;
   }
 
