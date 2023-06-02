@@ -1,9 +1,11 @@
+/*WAS DONE: Added css styles, so the mage looks nicer*/
+
 /*Import fonts so it looks nice*/
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;800&display=swap');
 
 /* Reset some default styles */
-body, h1, h2, p, ul, li {
+body, h1, h2, p, ul, li, img {
     margin: 0;
     padding: 0;
   }
@@ -67,12 +69,20 @@ section h2 {
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.reservation-form span{
+    margin-right: 0.66%;
+
+}
+#start_date
+{
+    margin-right: 3%;
+}
 
 .reservation-form input[type="text"]::placeholder,
 .reservation-form select option {
     color: #999;
 }
-
+.reservation-form 
 .reservation-form button {
     padding: 10px 20px;
     border: none;
@@ -99,7 +109,7 @@ section h2 {
     margin-top: 5%;
     margin-left: 25%;
     width: 60%;
-    max-height: 300 px;
+    max-height: 300px;
 
 }
 
@@ -107,6 +117,7 @@ section h2 {
 {
     max-height: 100%; 
     max-width: 100%;
+    object-fit: contain;
 }
 
 
@@ -122,7 +133,9 @@ section h2 {
     background-color: aqua;
 }
 
-
+.seating-layout h2{
+    text-align: center;
+}
 
 
 /* .seating-layout .seat {
