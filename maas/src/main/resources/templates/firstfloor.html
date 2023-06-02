@@ -98,27 +98,34 @@
 <!--            </form>-->
 <!--        </div>-->
         <div class = "reservation_plan">
-            <img th:src="@{floor1.JPG}" alt="floor plan", class="floor_plan">
+            <img th:src="@{/floor1.JPG}" alt="floor plan", class="floor_plan">
 
-            <form action="#" th:action="@{/firstfloor/1}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
-                <button type="submit" th:name="action" th:value="in">seat1</button>
+
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
+                <button type="submit" th:name="action" th:value="1">seat1</button>
             </form>
 
-            <form action="#" th:action="@{/firstfloor/2}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
-                <button type="submit" th:name="action" th:value="in2">seat2</button>
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="2">seat2</button>
             </form>
 
-            <form action="#" th:action="@{/firstfloor/3}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
-                <button type="submit" th:name="action" th:value="in3">seat3</button>
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="3">seat3</button>
             </form>
 
-            <form action="#" th:action="@{/firstfloor/4}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
-                <button type="submit" th:name="action" th:value="in4">seat4</button>
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="4">seat4</button>
             </form>
 
-            <form action="#" th:action="@{/firstfloor/5}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
-                <button type="submit" th:name="action" th:value="in5">seat5</button>
+            <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" style="top: 6.7%;left: 19.82%;">
+                <button type="submit" th:name="action" th:value="5">seat5</button>
             </form>
+
+
+            <form action="#" th:action="@{/submitbooking}" th:object="${data}" method="post" style="top: 6.7%;left: 18.3%;">
+                <button type="submit" th:name="action" th:value="1">reserve</button>
+            </form>
+
 
 <!--            <div class="selection_button" ,="" style="top: 6.7%;left: 18.3%;">-->
 <!--            </div>-->

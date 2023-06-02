@@ -14,6 +14,8 @@ public class PagesController {
 //    @Value("${graphql.url:none}")
 //    private String url;
 
+    private static String selectedSeat=null;
+
 
     @GetMapping("/firstfloor")
     public String maasGet(Model model) {
@@ -22,14 +24,28 @@ public class PagesController {
         return "firstfloor";
     }
 
-    @RequestMapping("/firstfloor/*")
+    @RequestMapping(value="/firstfloor/book", method = RequestMethod.POST)
     public String index(@RequestParam(value = "action", required = false) String action, Model model,Inputs form) {
 //        model.addAttribute("data", form);
         model.addAttribute("action", action);
-        System.out.println("button "+action);
-        return "redirect:/firstfloor";
+//        maas.maas.Booking.main(action);
+        selectedSeat=action;
+
+        return "redirect:/firstfloor/book";
     }
 
+    @GetMapping("/firstfloor/book")
+    public String firstfloorbook(Model model) {
+        model.addAttribute("data", new maas.maas.controllers.Inputs());
+        return "firstfloor";
+    }
+
+    @PostMapping("/submitbooking")
+    public String submitBooking(Model model) {
+        model.addAttribute("data", new maas.maas.controllers.Inputs());
+        System.out.println("submit");
+        return "firstfloor";
+    }
 
 
 
