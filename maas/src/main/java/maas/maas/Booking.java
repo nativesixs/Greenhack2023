@@ -9,60 +9,60 @@ import java.util.ArrayList;
 public class Booking {
     private static ArrayList dblst;
 
-    public static boolean isBooked(String action){
-        //mysql q to find if taken=true or no
-
-
-        return false;
-    }
-
-
-    public static void tableSetter(ResultSet rs) throws SQLException {
-        ArrayList<String> data = new ArrayList<String>();
-        while (rs.next()) {
-            //iterate row
-            ArrayList<String> row = new ArrayList<String>();
-            for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-                row.add(rs.getString(i));
-                System.out.println(row);
-            }
-            data.add(String.valueOf(row));
-        }
-
-        System.out.println(data);
-    }
+    static ArrayList<String> ids = new ArrayList<>();
+    static ArrayList<String> status = new ArrayList<>();
+    static ArrayList<String> date = new ArrayList<>();
 
 
 
-    public static String main(String button) throws SQLException {
-        if(isBooked(button)){
-            return "error";
-        }
-//        dblst = SQLHandle.verifyLogin(hostField.getText(), portField.getText(), loginField.getText(), pwField.getText());
-//        dblst = SQLHandle.verifyLogin("localhost","3306","root","star230902");
-//
-//        Querries.pickdatabase("cats");
-//
-//        tableSetter(Querries.queryExecute("","","",2));
-
-        String sqlSelectAllPersons = "SELECT * FROM seating";
+    public static void executeQuery(String query){
         String connectionUrl = "jdbc:mysql://localhost:3306/firstfloor";
-
         try (Connection conn = DriverManager.getConnection(connectionUrl, "root", "toor");
-             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons);
+             PreparedStatement ps = conn.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                long id = rs.getLong("id");
-                System.out.println(id);
+                ids.add(rs.getString("id"));
+                status.add(rs.getString("status"));
+                date.add(rs.getString("date"));
             }
         } catch (SQLException e) {
             System.out.println(e);
         }
-
-
-
-        return null;
     }
+
+    public static void insertInto(String seat,String date) throws SQLException {
+        String query = "INSERT INTO status_table(id,status,date) VALUES (\'"+seat+"\',\'BUSY\',\'"+date+"\')";
+        String connectionUrl = "jdbc:mysql://localhost:3306/firstfloor";
+        Connection conn = DriverManager.getConnection(connectionUrl, "root", "toor");
+
+
+//             PreparedStatement ps = conn.prepareStatement(query);
+//             ResultSet rs = ps.executeQuery()) {
+
+        Statement statement = conn.createStatement();
+        statement.executeUpdate(query);
+
+    }
+
+    public static boolean isBookable(String button) throws SQLException {
+
+        executeQuery("SELECT * FROM status_table");
+        System.out.println(ids);
+        if(!ids.contains(button)){
+            //seat is free
+            return true;
+        }else {
+            //do something, seat is booked
+            System.out.println("seat booked");
+            return false;
+        }
+    }
+
+    public static void bookSeat(String seat,String datew) throws SQLException {
+        insertInto(seat,datew);
+    }
+
+
 
 }

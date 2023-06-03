@@ -1,6 +1,10 @@
 package maas.maas.controllers;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
 public class Inputs {
 
     private String ckodField;
@@ -13,6 +17,25 @@ public class Inputs {
     private String placeckodField;
 
     private String id;
+
+    private String startDate;
+    private String endDate;
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
     public String getId() {
         return id;

@@ -31,13 +31,25 @@
                         </select>
                         <!-- Added start date and end date so the user can reserve multiple days -->
                         <h2 class = "middle_header">Choose date</h2>
-                        <span>Start date:</span>
-                        <input type="date" id="start_date" placeholder="dd-mm-yyyy">
-                        <span>End date:</span>
-                        <input type="date" id="end_date" placeholder="dd-mm-yyyy">
+
+
+
+
+
                         <h2></h2>
+                    </form>
+
+                    <form action="#" th:action="@{/firstfloor/getdate}" th:object="${data}"  method="post">
+                        <span>Start date:</span>
+                        <input name="stdate" id="stdate" type="text" th:field="*{startDate}">
+                        <!--                        <input type="date" id="start_date" th:value="*{startDate}" th:field="*{startDate}"  placeholder="dd-mm-yyyy">-->
+                        <span>End date:</span>
+                        <input name="enddate" id="enddate" type="text" th:field="*{endDate}">
+                        <!--                        <input type="date" id="end_date" th:value="*{endDate}" placeholder="dd-mm-yyyy">-->
+
                         <input type="submit" value="Show free places">
                     </form>
+
                 </div>
             </section>
             
@@ -48,7 +60,7 @@
 
                     <img th:src="@{/floor1_cropped.jpg}">
 
-                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}"  method="post" >
                         <button type="submit" th:name="action" th:value="1" style="top: 4.2%; left: 12.7%;" class="seat_free"></button>
                     </form>
 
@@ -66,6 +78,12 @@
 
                     <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
                         <button type="submit" th:name="action" th:value="5" style="top: 46.7%;left: 49.82%;"></button>
+                    </form>
+
+
+
+                    <form action="#" th:action="@{/submitbooking}" th:object="${data}"  method="post" >
+                        <input type="submit" value="Book Now">
                     </form>
 
 
