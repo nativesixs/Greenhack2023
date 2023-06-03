@@ -7,95 +7,144 @@
 <head>
     <title>Reservation System</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
-  </head>
-  <body>
-    <header>
-        <!-- Header content, such as logo and navigation -->
-        <h1>Our amazing seat reservation site</h1>
-        <img th:src="@{Edwards-LifeSciences-logo-transparent.png}" alt="Edwards Life Sciences Logo">
+</head>
+<body>
+<header>
+    <!-- Header content, such as logo and navigation -->
+    <h1>Our amazing seat reservation site</h1>
+    <img th:src="@{Edwards-LifeSciences-logo-transparent.png}" alt="Edwards Life Sciences Logo">
 
-    </header>
-  
-    <main>
-        <div class="container">
-            <section class="reservation-form">
-                <!-- Reservation form content, such as date picker, seat selection, etc. -->
-                <h2>Choose location</h2>
-                <div class = form>
-                    <form action="", method="post">
-                        <!-- Action je místo, které přesměruje na Java backed, Java si datum vezme pomocí metody post -->
-                        <select name="Location" id="location_select">
-                            <option value="prague" selected="selected">Prague</option>
-                            <!-- <option value="berlin">Berlin</option>
-                            <option value="wien">Wien</option> -->
-                        </select>
-                        <!-- Added start date and end date so the user can reserve multiple days -->
-                        <h2 class = "middle_header">Choose date</h2>
+</header>
 
+<main>
+    <div class="container">
+        <section class="reservation-form">
+            <!-- Reservation form content, such as date picker, seat selection, etc. -->
+            <h2>Choose location</h2>
+            <div class = form>
+                <form action="", method="post">
+                    <!-- Action je místo, které přesměruje na Java backed, Java si datum vezme pomocí metody post -->
+                    <select name="Location" id="location_select">
+                        <option value="prague" selected="selected">Prague</option>
+                        <!-- <option value="berlin">Berlin</option>
+                        <option value="wien">Wien</option> -->
+                    </select>
 
-
-
-
-                        <h2></h2>
-                    </form>
-
-                    <form action="#" th:action="@{/firstfloor/getdate}" th:object="${data}"  method="post">
-                        <span>Start date:</span>
-                        <input name="stdate" id="stdate" type="text" th:field="*{startDate}">
-                        <!--                        <input type="date" id="start_date" th:value="*{startDate}" th:field="*{startDate}"  placeholder="dd-mm-yyyy">-->
-                        <span>End date:</span>
-                        <input name="enddate" id="enddate" type="text" th:field="*{endDate}">
-                        <!--                        <input type="date" id="end_date" th:value="*{endDate}" placeholder="dd-mm-yyyy">-->
-
-                        <input type="submit" value="Show free places">
-                    </form>
-
-                </div>
-            </section>
-            
-            <section class="seating_selection">
-                <h2>Seating Layout</h2>
-                <!-- Seating layout and seat availability display -->
-                <div class="floor_plan_div">
-
-                    <img th:src="@{/floor1_cropped.jpg}">
-
-                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}"  method="post" >
-                        <button type="submit" th:styleAppend="|background: ${color1}|" th:name="action" th:value="1" style="top: 4.2%; left: 12.7%;"></button>
-                    </form>
-
-                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:styleAppend="|background: ${color2}|" th:name="action" th:value="2" style="top: 11%; left: 12.7%;"></button>
-                    </form>
-
-                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:styleAppend="|background: ${color3}|" th:name="action" th:value="3" style="top: 4.2%;left: 16%;"></button>
-                    </form>
-
-                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:styleAppend="|background: ${color4}|" th:name="action" th:value="4" style="top: 11%;left: 16%;"></button>
-                    </form>
-
-                    <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:styleAppend="|background: ${color5}|" th:name="action" th:value="5" style="top: 46.7%;left: 49.82%;"></button>
-                    </form>
+                    <!-- Added start date and end date so the user can reserve multiple days -->
+                    <h2 class = "middle_header">Choose date</h2>
 
 
 
-                    <form action="#" th:action="@{/submitbooking}" th:object="${data}"  method="post" >
-<!--                        <input type="submit" value="Book Now">-->
-                        <input type="submit" th:onclick="'alert(\'Booked!\');'" value="Book now">
-                    </form>
 
 
-                </div>
-                
-            </section>
-        </div>
-    </main>
-  
-    <footer>
-      <!-- Footer content, such as contact information or additional links -->
-    </footer>
-  </body>
-  </html>
+                    <h2></h2>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/getdate}" th:object="${data}"  method="post">
+                    <span>Start date:</span>
+                    <input name="stdate" id="stdate" type="text" th:field="*{startDate}">
+                    <!--                        <input type="date" id="start_date" th:value="*{startDate}" th:field="*{startDate}"  placeholder="dd-mm-yyyy">-->
+                    <span>End date:</span>
+                    <input name="enddate" id="enddate" type="text" th:field="*{endDate}">
+                    <!--                        <input type="date" id="end_date" th:value="*{endDate}" placeholder="dd-mm-yyyy">-->
+
+                    <input type="submit" value="Show free places">
+                </form>
+
+
+
+            </div>
+        </section>
+
+        <section class="seating_selection">
+            <h2>Seating Layout</h2>
+            <!-- Seating layout and seat availability display -->
+            <div class="floor_plan_div">
+
+
+
+                <img th:src="@{/floor1_cropped.jpg}">
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}"  method="post" >
+                    <button type="submit" th:styleAppend="|background: ${color1}|" th:name="action" th:value="1" style="top: 4.2%; left: 12.7%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:styleAppend="|background: ${color2}|" th:name="action" th:value="2" style="top: 11%; left: 12.7%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:styleAppend="|background: ${color3}|" th:name="action" th:value="3" style="top: 4.2%;left: 16%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:styleAppend="|background: ${color4}|" th:name="action" th:value="4" style="top: 11%;left: 16%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:styleAppend="|background: ${color5}|" th:name="action" th:value="5" style="top: 46.7%;left: 49.82%;"></button>
+                </form>
+
+
+
+
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color6}|" th:value="6" style="top: 11%;left: 18.1%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color7}|" th:value="7" style="top: 4.2%;left: 21.5%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color8}|" th:value="8" style="top: 11%;left: 21.5%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color9}|" th:value="9" style="top: 4.2%;left: 23.6%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color10}|" th:value="10" style="top: 11%;left: 23.6%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color11}|" th:value="11" style="top: 4.2%;left: 27%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color12}|" th:value="12" style="top: 11%;left: 27%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color13}|" th:value="13" style="top: 4.2%;left: 30%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color14}|" th:value="14" style="top: 7.6%;left: 30%;"></button>
+                </form>
+
+                <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
+                    <button type="submit" th:name="action" th:styleAppend="|background: ${color15}|" th:value="15" style="top: 11%;left: 30%;"></button>
+                </form>
+
+
+
+                <form action="#" th:action="@{/submitbooking}" th:object="${data}"  method="post" >
+                    <!--                        <input type="submit" value="Book Now">-->
+                    <input type="submit" th:onclick="'alert(\'Booked!\');'" value="Book now">
+                </form>
+
+
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<footer>
+    <!-- Footer content, such as contact information or additional links -->
+</footer>
+</body>
+</html>

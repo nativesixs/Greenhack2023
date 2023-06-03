@@ -20,13 +20,13 @@ body {
 h1, h2
 {
     text-align: left;
-} 
+}
 
 .container {
     display: flex;
     margin: 2%;
     height: 130vh;
-    
+
   }
 
 
@@ -46,7 +46,7 @@ header img{
     float: right;
     margin-right: 1%;
     width: 40%;
-    
+
 }
 
 header h1 {
@@ -70,7 +70,7 @@ section {
 .reservation-form {
     width: 10%;
   }
-  
+
 .seating_selection {
     width: 86%;
     margin-left: 2%;
@@ -113,7 +113,7 @@ section h2 {
 .reservation-form select option {
     color: #999;
 }
-.reservation-form 
+.reservation-form
 .reservation-form button {
     padding: 10px 20px;
     border: none;
@@ -144,8 +144,8 @@ section h2 {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
-    
-    
+
+
 }
 
 .seating_selection h2{

@@ -12,6 +12,10 @@ public class Booking {
     static ArrayList<String> date = new ArrayList<>();
 
 
+    public static String monitor,side,temp=null;
+
+
+
     public static String getYear(String date){
         return date.substring(6, 10);
     }
@@ -76,22 +80,22 @@ public class Booking {
 
 
     public static void fetchMaster(String selected) throws SQLException {
-        String query="SELECT monitors_n,side_direction,temperatureFROM firstfloor.master_table where id_chair = "+"'"+selected+"'"+";";
+        String query="SELECT monitors_n,side_direction,temperature FROM firstfloor.master_table where id_chair = "+selected;
         String connectionUrl = "jdbc:mysql://localhost:3306/firstfloor";
         Connection conn = DriverManager.getConnection(connectionUrl, "root", "toor");
         PreparedStatement ps = conn.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
-        int monitor=0;
-        String side=null;
-        int temp=0;
+//        ArrayList<String> data = new ArrayList<>();
         while (rs.next()) {
-            monitor= Integer.parseInt(rs.getString(1));
+            monitor= rs.getString(1);
             side=rs.getString(2);
-            temp= Integer.parseInt(rs.getString(3));
+            temp= rs.getString(3);
+//        data.add(rs.getString(1));
+//        data.add(rs.getString(2));
+//        data.add(rs.getString(3));
         }
 
-
-
+//        return data;
 
     }
 
