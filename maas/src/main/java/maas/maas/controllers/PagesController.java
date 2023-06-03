@@ -64,33 +64,13 @@ public class PagesController {
         String en=form.getStartDate();
         String st=form.getEndDate();
 
+        model.addAttribute("color","black");
 
         return "firstfloor";
     }
 
 
-//    @PostMapping("/firstfloor")
-//    public String maasSub(@ModelAttribute maas.maas.controllers.Inputs form, Model model) throws IOException, ExecutionException, InterruptedException{
-//        model.addAttribute("data", form);
-//
-////        String log = maas.maas.main(ckod,mode, inventory,url);
-////        model.addAttribute("logger",log);
-//
-//        return "firstfloor";
-//    }
 
-//    @PostMapping("/firstfloor/*")
-//    public String postdb(@ModelAttribute maas.maas.controllers.Inputs form, Model model) throws IOException, ExecutionException, InterruptedException{
-//        model.addAttribute("data", form);
-//        String id = form.getId();
-//
-//
-//
-//        System.out.println("clk "+id);
-//        model.addAttribute("logger",id);
-//        System.out.println(id);
-//        return "firstfloor";
-//    }
 
 
 

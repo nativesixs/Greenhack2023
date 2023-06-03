@@ -1,7 +1,5 @@
 package maas.maas;
 
-import maas.maas.controllers.Querries;
-import maas.maas.controllers.SQLHandle;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -48,13 +46,11 @@ public class Booking {
     public static boolean isBookable(String button) throws SQLException {
 
         executeQuery("SELECT * FROM status_table");
-        System.out.println(ids);
         if(!ids.contains(button)){
             //seat is free
             return true;
         }else {
             //do something, seat is booked
-            System.out.println("seat booked");
             return false;
         }
     }
