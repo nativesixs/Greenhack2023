@@ -61,23 +61,23 @@
                     <img th:src="@{/floor1_cropped.jpg}">
 
                     <form action="#" th:action="@{/firstfloor/book}" th:object="${data}"  method="post" >
-                        <button type="submit" th:styleAppend="|background: ${color}|" th:name="action" th:value="1" style="top: 4.2%; left: 12.7%;" class="seat_free"></button>
+                        <button type="submit" th:styleAppend="|background: ${color1}|" th:name="action" th:value="1" style="top: 4.2%; left: 12.7%;"></button>
                     </form>
 
                     <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:name="action" th:value="2" style="top: 11%; left: 12.7%;" class="seat_occupied"></button>
+                        <button type="submit" th:styleAppend="|background: ${color2}|" th:name="action" th:value="2" style="top: 11%; left: 12.7%;"></button>
                     </form>
 
                     <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:name="action" th:value="3" style="top: 4.2%;left: 16%;" class="seat_free"></button>
+                        <button type="submit" th:styleAppend="|background: ${color3}|" th:name="action" th:value="3" style="top: 4.2%;left: 16%;"></button>
                     </form>
 
                     <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:name="action" th:value="4" style="top: 11%;left: 16%;" class="seat_selected"></button>
+                        <button type="submit" th:styleAppend="|background: ${color4}|" th:name="action" th:value="4" style="top: 11%;left: 16%;"></button>
                     </form>
 
                     <form action="#" th:action="@{/firstfloor/book}" th:object="${data}" method="post" >
-                        <button type="submit" th:name="action" th:value="5" style="top: 46.7%;left: 49.82%;"></button>
+                        <button type="submit" th:styleAppend="|background: ${color5}|" th:name="action" th:value="5" style="top: 46.7%;left: 49.82%;"></button>
                     </form>
 
 

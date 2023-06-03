@@ -12,6 +12,15 @@ public class Booking {
     static ArrayList<String> date = new ArrayList<>();
 
 
+    public static String getYear(String date){
+        return date.substring(6, 10);
+    }
+    public static String getMonth(String date){
+        return date.substring(3, 5);
+    }
+    public static String getDay(String date){
+        return date.substring(0, 2);
+    }
 
     public static void executeQuery(String query){
         String connectionUrl = "jdbc:mysql://localhost:3306/firstfloor";
@@ -33,18 +42,12 @@ public class Booking {
         String query = "INSERT INTO status_table(id,status,date) VALUES (\'"+seat+"\',\'BUSY\',\'"+date+"\')";
         String connectionUrl = "jdbc:mysql://localhost:3306/firstfloor";
         Connection conn = DriverManager.getConnection(connectionUrl, "root", "toor");
-
-
-//             PreparedStatement ps = conn.prepareStatement(query);
-//             ResultSet rs = ps.executeQuery()) {
-
         Statement statement = conn.createStatement();
         statement.executeUpdate(query);
 
     }
 
     public static boolean isBookable(String button) throws SQLException {
-
         executeQuery("SELECT * FROM status_table");
         if(!ids.contains(button)){
             //seat is free
@@ -57,6 +60,11 @@ public class Booking {
 
     public static void bookSeat(String seat,String datew) throws SQLException {
         insertInto(seat,datew);
+    }
+
+    public static ArrayList<String> getBooked(){
+        executeQuery("SELECT * FROM status_table");
+        return ids;
     }
 
 
