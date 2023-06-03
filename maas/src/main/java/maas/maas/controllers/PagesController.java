@@ -24,6 +24,9 @@ public class PagesController {
     private static int totalSeats=4;
 
     private static String selectedSeat=null;
+    private static String startDate=null;
+    private static String endDate=null;
+    private static ArrayList<String> isFree = new ArrayList<>();
 
 
     @GetMapping("/firstfloor")
@@ -39,7 +42,21 @@ public class PagesController {
     public String index(@RequestParam(value = "action", required = false) String action,@ModelAttribute Inputs form, Model model) throws SQLException {
         model.addAttribute("action", action);
         selectedSeat=action;
-//        return "redirect:/firstfloor/book";
+
+        model.addAttribute("data", form);
+//        String st=form.getStartDate();
+//        String en=form.getEndDate();
+        java.sql.Date start = getSQLdate(startDate);
+        java.sql.Date end = getSQLdate(endDate);
+        isFree=Booking.callByDate(start,end,selectedSeat);
+        colorUpdate(model);
+
+        Booking.fetchMaster(selectedSeat);
+
+
+
+
+
         return "redirect:/firstfloor";
     }
 
@@ -62,6 +79,13 @@ public class PagesController {
             System.out.println("seat was booked");
         }
 
+        for(int j=0;j<isFree.size();j++){
+            if(!isFree.get(j).equals("free")){
+                System.out.println("good");
+            }else {
+                System.out.println("bad");
+            }
+        }
 
         model.addAttribute("data", form);
         colorUpdate(model);
@@ -72,25 +96,31 @@ public class PagesController {
     @PostMapping("/firstfloor/getdate")
     public String getdate(@ModelAttribute Inputs form, Model model) throws IOException, ExecutionException, InterruptedException, SQLException {
         model.addAttribute("data", form);
-        String st=form.getStartDate();
-        String en=form.getEndDate();
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        try {
-            java.util.Date utilDate = format.parse(Booking.getYear(st)+"/"+Booking.getMonth(st)+"/"+Booking.getDay(st));
-            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-            System.out.println(sqlDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
+//        String st=form.getStartDate();
+//        String en=form.getEndDate();
+//        java.sql.Date start = getSQLdate(st);
+//        java.sql.Date end = getSQLdate(en);
+//        Booking.callByDate(start,end,selectedSeat);
+        startDate=form.getStartDate();
+        endDate=form.getEndDate();
 
         colorUpdate(model);
 
         return "firstfloor";
     }
 
-//    private static String getSQLdate()
+    private static java.sql.Date getSQLdate(String date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        try {
+            java.util.Date utilDate = format.parse(Booking.getYear(date)+"/"+Booking.getMonth(date)+"/"+Booking.getDay(date));
+            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            return sqlDate;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     private static void colorUpdate(Model model){
         ArrayList<String> booked = Booking.getBooked();

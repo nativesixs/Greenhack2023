@@ -83,7 +83,8 @@
 
 
                     <form action="#" th:action="@{/submitbooking}" th:object="${data}"  method="post" >
-                        <input type="submit" value="Book Now">
+<!--                        <input type="submit" value="Book Now">-->
+                        <input type="submit" th:onclick="'alert(\'Booked!\');'" value="Book now">
                     </form>
 
 
