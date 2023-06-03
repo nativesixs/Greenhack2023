@@ -10,22 +10,6 @@ public class Querries {
         this.connection = connection;
     }
 
-    /*
-    REPLACED BY QUERYEXECUTE - CLEANUP?
-
-
-    public static ResultSet showTables() throws SQLException {
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("show tables");
-        return rs;
-    }
-
-    public static ResultSet searchWhere(String selected,String command,String id) throws SQLException {
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from "+selected+" where "+id +"= "+ '\u0022'+ command+'\u0022');
-        return rs;
-    }
-*/
     public static ResultSet queryExecute(String selected, String id,String command,int choice) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet rs = null;
